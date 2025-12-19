@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct DayDetailView: View {
+    var dayDetail: DayDetail = dayDetails[1]
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Text(dayDetail.day)
+               .font(.system(size: 16, weight: .medium, design: .default))
+               .foregroundStyle(.white)
+            Image(systemName: dayDetail.image)
+               .renderingMode(.original)
+               .resizable()
+               .aspectRatio(contentMode: .fit)
+               .frame(width: 40, height: 40)
+            Text(dayDetail.temp)
+               .font(.system(size: 25, weight: .medium))
+               .foregroundStyle(.white)
+       }
     }
 }
 

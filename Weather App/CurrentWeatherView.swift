@@ -9,7 +9,18 @@ import SwiftUI
 
 struct CurrentWeatherView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image(systemName: "cloud.sun.fill")
+                .renderingMode(.original)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 180, height: 180)
+            Text("76°C")
+                .font(.system(size: 50, weight: .bold))
+                .fontWeight(.bold)
+                .foregroundStyle(.white)
+        }
+        .padding(.bottom, 40)
     }
 }
 

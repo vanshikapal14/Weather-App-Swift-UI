@@ -9,13 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+            ZStack {
+                BackgroundView()
+                    .edgesIgnoringSafeArea(.all)
+                VStack {
+                    LocationView()
+                    
+                    Spacer()
+                    
+                    CurrentWeatherView()
+                        .padding(.bottom, 40)
+                    
+                    Spacer()
+                    
+                    HStack(spacing: 20) {
+                        ForEach(dayDetails) { day in
+                            DayDetailView(dayDetail: day)
+                        }
+                    }
+                    
+                    Spacer()
+                    ButtonView()
+
+                    
+                }
+                .padding()
+            }
     }
 }
 
